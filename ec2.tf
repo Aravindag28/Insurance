@@ -5,8 +5,8 @@ provider "aws" {
 }
 # Security Groups
 
-resource "aws_security_group" "Kubernetes" {
-  name        = "Kubernetes"
+resource "aws_security_group" "Insurance" {
+  name        = "Insurance"
   description = "Allow inbound traffic"
 
   ingress {
@@ -40,28 +40,28 @@ resource "aws_security_group" "Kubernetes" {
 
 # Create Instance
 
-resource "aws_instance" "Kubernetes_Master" {
+resource "aws_instance" "Insurance_Master" {
   ami           = "ami-03cb1380eec7cc118"
   instance_type = "t2.micro"
-  vpc_security_group_ids = [aws_security_group.Kubernetes.id]
+  vpc_security_group_ids = [aws_security_group.Insurance.id]
   key_name = "Staragile"
 
   tags = {
-    Name = "Kubernetes_Master"
+    Name = "Insurance_Master"
   }
   
 }
 
 # Create Instance 
 
-resource "aws_instance" "Kubernetes_Workernode1" {
+resource "aws_instance" "Insurance_Workernode1" {
   ami           = "ami-03cb1380eec7cc118"
   instance_type = "t2.micro"
-  vpc_security_group_ids = [aws_security_group.Kubernetes.id]
+  vpc_security_group_ids = [aws_security_group.Insurance.id]
   key_name = "Staragile"
 
   tags = {
-    Name = "Kubernetes_Workernode1"
+    Name = "Insurance_Workernode1"
   }
  
 }
@@ -69,14 +69,14 @@ resource "aws_instance" "Kubernetes_Workernode1" {
 
 # Create Instance
 
-resource "aws_instance" "Kubernetes_Workernode2" {
+resource "aws_instance" "Insurance_Workernode2" {
   ami           = "ami-03cb1380eec7cc118"
   instance_type = "t2.micro"
-  vpc_security_group_ids = [aws_security_group.Kubernetes.id]
+  vpc_security_group_ids = [aws_security_group.Insurance.id]
   key_name = "Staragile"
 
   tags = {
-    Name = "Kubernetes_Workernode2"
+    Name = "Insurance_Workernode2"
   }
   
 }
