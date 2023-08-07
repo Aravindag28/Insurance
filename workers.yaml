@@ -1,4 +1,4 @@
-- hosts: Kubernetes_Master
+- hosts: Insurance_Master
   become: yes
   gather_facts: false
   tasks:
@@ -14,7 +14,7 @@
   become: yes
   tasks:
     - name: join cluster
-      shell: "{{ hostvars['Kubernetes_Master'].join_command }} --ignore-preflight-errors all >> node_joined.txt"
+      shell: "{{ hostvars['Insurance_Master'].join_command }} --ignore-preflight-errors all >> node_joined.txt"
       args:
         chdir: $HOME
         creates: node_joined.txt

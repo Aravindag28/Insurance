@@ -1,6 +1,6 @@
-- hosts: Kubernetes_Master
+- hosts: Insurance_Master
   tasks:
-    - name: Copy deployment.yaml to Kubernetes master
+    - name: Copy deployment.yaml to Insurance master
       ansible.builtin.copy:
         src: "/home/slaveadmin/workspace/Health-Care/deployment.yaml"
         dest: "/tmp/deployment.yaml"
